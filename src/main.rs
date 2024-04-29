@@ -6,7 +6,6 @@ use std::io::{self, Write};
 use std::sync::Mutex;
 use std::thread;
 
-/*
 thread_local! {
     static LOG_FILE: RefCell<io::Result<File>> = RefCell::new(
         OpenOptions::new()
@@ -33,8 +32,8 @@ fn log(level: &str, file: &str, line: u32, message: &str) {
         }
     });
 }
-*/
 
+/*
 lazy_static! {
     static ref LOG_FILE: Mutex<io::Stdout> = Mutex::new(io::stdout());
 }
@@ -54,6 +53,7 @@ fn log(level: &str, file: &str, line: u32, message: &str) {
     let _ = stdout.write_all(log_message.as_bytes());
     let _ = stdout.flush();
 }
+*/
 
 macro_rules! log_error {
     ($($arg:tt)*) => {
